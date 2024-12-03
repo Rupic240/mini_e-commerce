@@ -1,0 +1,43 @@
+[
+  {
+    "id": 1,
+    "name": "T-Shirt",
+    "price": 19.99,
+    "category": "Clothing",
+    "image": "/images/tshirt.png",
+    "description": "A comfortable and stylish t-shirt."
+  },
+  {
+    "id": 2,
+    "name": "Sports Shoes",
+    "price": 49.99,
+    "category": "Footwear",
+    "image": "/images/shoes.png",
+    "description": "Durable running shoes for everyday wear."
+  },
+  {
+    "id": 3,
+    "name": "Leather Wallet",
+    "price": 29.99,
+    "category": "Accessories",
+    "image": "/images/wallet.png",
+    "description": "A premium leather wallet with multiple compartments."
+  },
+
+  {
+    "id": 4,
+    "name": "Digital Smartwatch",
+    "price": 99.99,
+    "category": "Electronics",
+    "image": "/images/smartwatch.png",
+    "description": "A feature-packed smartwatch with heart-rate monitoring and fitness tracking."
+  },
+  {
+    "id": 5,
+    "name": "Wireless Earbuds",
+    "price": 59.99,
+    "category": "Electronics",
+    "image": "/images/earbuds.png",
+    "description": "Noise-canceling wireless earbuds with a long battery life."
+  }
+]

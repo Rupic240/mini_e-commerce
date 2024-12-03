@@ -1,0 +1,18 @@
+[
+  {
+    "id": 1,
+    "name": "Men's T-Shirt",
+    "price": 19.99,
+    "quantity": 2,
+    "totalPrice": 39.98,
+    "image": "/images/shirt.png"
+  },
+  {
+    "id": 2,
+    "name": "Sports Shoes",
+    "price": 59.99,
+    "quantity": 1,
+    "totalPrice": 59.99,
+    "image": "/images/sport_shoes.png"
+  }
+]
