@@ -1,9 +1,24 @@
-import { Box, Card, CardContent, Typography } from "@mui/material";
+import { Box, Button, Card, CardContent, Typography } from "@mui/material";
 import cart from "../utils/cart.json"
+import { useEffect, useState } from "react";
 const Cart = () => {
 
-    const favItem = JSON.parse(localStorage.getItem('cart')) || cart;
-    const validItems = favItem.filter(item => item.id && item.name && item.price);
+    const [cartItems, setCartItems] = useState([]);
+
+    
+    useEffect(() => {
+        
+        const storedItems = JSON.parse(localStorage.getItem('cart')) || cart;
+        setCartItems(storedItems);
+    }, []) 
+    const removeItem = (id) => {
+        const updatedItems = cartItems.filter(item => item.id !== id);
+        setCartItems(updatedItems);
+        localStorage.setItem('cart', JSON.stringify(updatedItems));
+    }
+
+    const validItems = cartItems.filter(item => item.id && item.name && item.price);
+
 
     return (
         <Box>
@@ -11,7 +26,7 @@ const Cart = () => {
 
             {
                 validItems.length === 0 ? (
-                    <Typography variant="h6">Your cart is empty.</Typography>
+                    <Typography variant="h5" sx={{ textAlign: "center", mt: 2 }}>Your cart is empty.</Typography>
                 ) : (
                     <>
                         {
@@ -24,6 +39,8 @@ const Cart = () => {
                                             mb: 2,
                                             bgcolor: "transparent",
                                             display: 'flex',
+                                            flexDirection: 'column',
+                                            padding: 2,
                                             alignItems: 'center',
                                             justifyContent: 'center'
                                         }}>
@@ -37,6 +54,13 @@ const Cart = () => {
                                             <Typography variant="h5">{item.name}</Typography>
                                             <Typography>Price - {item.price} $</Typography>
                                         </CardContent>
+                                        <Button
+                                            variant="outlined"
+                                            sx={{ width: 150 }}
+                                            onClick={() => removeItem(item.id)}
+                                        >
+                                            Remove
+                                        </Button>
                                     </Card>
                                 )
                             })
